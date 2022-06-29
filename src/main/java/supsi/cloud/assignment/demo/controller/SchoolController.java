@@ -26,6 +26,11 @@ public class SchoolController {
     @Autowired
     ExamService examService;
 
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String getHome(){
+        return "Hello world";
+    }
+
     @RequestMapping(value = "/students", method = RequestMethod.GET)
     public ResponseEntity<List<Student>> getAllStudents() {
         try {
